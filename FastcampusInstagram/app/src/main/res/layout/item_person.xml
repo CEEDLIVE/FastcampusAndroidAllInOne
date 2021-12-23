@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/data_person_id"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/data_person_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/data_person_guideline"
+        tools:text="아이디" />
+
+    <TextView
+        android:id="@+id/data_person_name"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/data_person_id"
+        app:layout_constraintEnd_toStartOf="@id/data_person_age"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/data_person_guideline"
+        tools:text="이름" />
+
+    <TextView
+        android:id="@+id/data_person_age"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/data_person_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/data_person_guideline"
+        tools:text="나이" />
+
+    <androidx.constraintlayout.widget.Guideline
+        app:layout_constraintGuide_begin="42dp"
+        android:id="@+id/data_person_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"/>
+
+    <TextView
+        android:id="@+id/data_person_intro"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/data_person_guideline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="상세내용" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
