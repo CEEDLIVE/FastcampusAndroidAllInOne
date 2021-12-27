@@ -1,15 +1,16 @@
-package ceed.live.android.kotlin.fastcampus.instagram
+package ceed.live.android.kotlin.fastcampus.instagram.http
 
 import android.app.Activity
-import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
 import android.view.View
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
+import ceed.live.android.kotlin.fastcampus.instagram.BaseActivity
 import ceed.live.android.kotlin.fastcampus.instagram.Constants.Companion.API_STUDENTS_GET
+import ceed.live.android.kotlin.fastcampus.instagram.logger.Log4k
+import ceed.live.android.kotlin.fastcampus.instagram.R
+import ceed.live.android.kotlin.fastcampus.instagram.adapter.PersonRecyclerViewAdapter
 import ceed.live.android.kotlin.fastcampus.instagram.data.Person
 import com.google.gson.Gson
 import org.json.JSONArray

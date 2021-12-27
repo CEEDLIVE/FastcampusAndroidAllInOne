@@ -3,6 +3,7 @@
     package="ceed.live.android.kotlin.fastcampus.instagram">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".MasterApplication"
@@ -13,9 +14,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FastcampusInstagram"
         android:usesCleartextTraffic="true">
-        <activity android:name=".NetworkActivity" android:exported="true" />
-        <activity android:name=".EmailSignUpActivity" android:exported="true" />
-        <activity android:name=".MainActivity" android:exported="true">
+        <activity
+            android:name=".member.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".permisson.PermissionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".http.RetrofitActivity"
+            android:exported="true" />
+        <activity
+            android:name=".http.NetworkActivity"
+            android:exported="true" />
+        <activity
+            android:name=".member.EmailSignUpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

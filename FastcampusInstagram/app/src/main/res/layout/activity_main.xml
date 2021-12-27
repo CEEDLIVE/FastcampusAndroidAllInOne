@@ -16,14 +16,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
-    <Button
-        android:id="@+id/btn_move_network"
-        android:layout_width="wrap_content"
+<!--    <Button-->
+<!--        android:id="@+id/btn_move_network"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Network"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/btn_move_retrofit"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_move_retrofit"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Retrofit"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        />-->
+
+    <LinearLayout
+        android:id="@+id/layout_chapter_list"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Network"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        android:orientation="vertical" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

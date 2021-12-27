@@ -1,11 +1,11 @@
-package ceed.live.android.kotlin.fastcampus.instagram
+package ceed.live.android.kotlin.fastcampus.instagram.logger
 
 import android.util.Log
 
 class Log4k {
 
     companion object {
-        private const val TAG_DEFAULT:String = "ceedlive_facam"
+        private const val TAG_DEFAULT:String = "ceedlive"
 
         private const val TWO:Int = Log.VERBOSE // 2
         private const val THREE:Int = Log.DEBUG // 3

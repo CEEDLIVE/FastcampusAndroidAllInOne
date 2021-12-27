@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="chapterList">
+        <item>network</item>
+        <item>retrofit</item>
+        <item>permission</item>
+        <item>member</item>
+    </string-array>
+
+</resources>

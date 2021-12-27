@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EmailSignUpActivity">
+    tools:context=".member.EmailSignUpActivity">
 
     <TextView
         android:id="@+id/tv_description"
@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:hint="아이디를 입력해주세요."
         android:layout_gravity="center"
+        android:inputType="text"
         app:layout_constraintTop_toBottomOf="@id/tv_description"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,6 +38,7 @@
         android:layout_height="wrap_content"
         android:hint="비밀번호를 입력해주세요."
         android:layout_gravity="center"
+        android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@id/et_username"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,6 +51,7 @@
         android:layout_height="wrap_content"
         android:hint="비밀번호를 다시 입력해주세요."
         android:layout_gravity="center"
+        android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@id/et_password1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

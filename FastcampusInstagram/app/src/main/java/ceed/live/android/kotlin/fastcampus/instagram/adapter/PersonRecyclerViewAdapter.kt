@@ -1,13 +1,14 @@
-package ceed.live.android.kotlin.fastcampus.instagram
+package ceed.live.android.kotlin.fastcampus.instagram.adapter
 
 import android.database.DataSetObserver
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Adapter
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import ceed.live.android.kotlin.fastcampus.instagram.logger.Log4k
+import ceed.live.android.kotlin.fastcampus.instagram.R
 import ceed.live.android.kotlin.fastcampus.instagram.data.Person
 
 
@@ -56,7 +57,6 @@ class PersonRecyclerViewAdapter(private val dataSet: MutableList<Person>) :
         }
 
         fun bind(data: Person, position: Int) {
-            Log4k.e("bind data: $data")
 
             // set data
             personIdView.text = data.id.toString()
@@ -96,8 +96,6 @@ class PersonRecyclerViewAdapter(private val dataSet: MutableList<Person>) :
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         viewHolder.bind(dataSet[position], position)
-
-        Log4k.e("onBindViewHolder")
     }
 
     // Return the size of your dataset (invoked by the layout manager)
