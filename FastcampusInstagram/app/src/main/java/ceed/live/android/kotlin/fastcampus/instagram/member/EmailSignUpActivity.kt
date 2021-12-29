@@ -13,6 +13,7 @@ import ceed.live.android.kotlin.fastcampus.instagram.R
 import ceed.live.android.kotlin.fastcampus.instagram.data.Register
 import ceed.live.android.kotlin.fastcampus.instagram.data.User
 import ceed.live.android.kotlin.fastcampus.instagram.logger.Log4k
+import ceed.live.android.kotlin.fastcampus.instagram.post.OutstagramPostListActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,10 +29,23 @@ class EmailSignUpActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_email_sign_up)
 
-        initView(this@EmailSignUpActivity)
-        setupListener()
+        when {
+            (application as MasterApplication).checkLogin() -> {
+                movePostListActivity()
+            }
+            else -> {
+                setContentView(R.layout.activity_email_sign_up)
+                initView(this@EmailSignUpActivity)
+                setupListener()
+            }
+        }
+    }
+
+    private fun movePostListActivity() {
+        val intent = Intent(this, OutstagramPostListActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     private fun setupListener() {
@@ -39,7 +53,7 @@ class EmailSignUpActivity : BaseActivity() {
             register()
         }
         btnLogin.setOnClickListener {
-            login()
+            moveLoginActivity()
         }
     }
 
@@ -68,7 +82,7 @@ class EmailSignUpActivity : BaseActivity() {
         }
     }
 
-    private fun login() {
+    private fun moveLoginActivity() {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
     }
@@ -136,10 +150,14 @@ class EmailSignUpActivity : BaseActivity() {
     }
 
     private fun saveUserToken(token: String, activity: Activity) {
-        val sp = activity.getSharedPreferences("sp_login", Context.MODE_PRIVATE)
-        val editor = sp.edit()
-        editor.putString("sp_login", token)
-        editor.apply()
+//        val sp = activity.getSharedPreferences("sp_login", Context.MODE_PRIVATE)
+//        val editor = sp.edit()
+//        editor.putString("sp_login", token)
+//        editor.apply()
+
+        Log4k.e("saveUserToken token: $token")
+
+        MasterApplication.sharedPreferences.token = token
     }
 
     private fun showToast(text: String) {

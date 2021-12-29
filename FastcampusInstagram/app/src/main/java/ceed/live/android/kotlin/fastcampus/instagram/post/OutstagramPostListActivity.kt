@@ -60,7 +60,7 @@ class OutstagramPostListActivity : BaseActivity() {
                     val code = response.code()
                     val header = response.headers()
 
-                    Log4k.e("postList: $postList")
+//                    Log4k.e("postList: $postList")
                     Log4k.e("code: $code")
                     Log4k.e("header: $header")
 

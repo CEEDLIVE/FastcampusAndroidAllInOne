@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import ceed.live.android.kotlin.fastcampus.instagram.MasterApplication
 import ceed.live.android.kotlin.fastcampus.instagram.R
 import ceed.live.android.kotlin.fastcampus.instagram.data.User
+import ceed.live.android.kotlin.fastcampus.instagram.logger.Log4k
 import ceed.live.android.kotlin.fastcampus.instagram.post.OutstagramPostListActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -46,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
                             saveUserToken(activity, token)
                             showToast("로그인 완료")
                             (application as MasterApplication).createRetrofit()
-                            moveActivity()
+                            movePostListActivity()
                         }
                     }
 
@@ -58,17 +59,21 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun saveUserToken(activity: Activity, token: String) {
-        val sp = activity.getSharedPreferences("sp_login", Context.MODE_PRIVATE)
-        val editor = sp.edit()
-        editor.putString("sp_login", token)
-        editor.apply()
+//        val sp = activity.getSharedPreferences("sp_login", Context.MODE_PRIVATE)
+//        val editor = sp.edit()
+//        editor.putString("sp_login", token)
+//        editor.commit()
+
+        Log4k.e("saveUserToken token: $token")
+
+        MasterApplication.sharedPreferences.token = token
     }
 
     private fun showToast(text: String) {
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
     }
 
-    fun moveActivity() {
+    fun movePostListActivity() {
         val intent = Intent(this, OutstagramPostListActivity::class.java)
         startActivity(intent)
     }
