@@ -1,6 +1,7 @@
 package ceed.live.android.kotlin.fastcampus.instagram.http
 
 import ceed.live.android.kotlin.fastcampus.instagram.data.Person
+import ceed.live.android.kotlin.fastcampus.instagram.data.Post
 import ceed.live.android.kotlin.fastcampus.instagram.data.Register
 import ceed.live.android.kotlin.fastcampus.instagram.data.User
 import retrofit2.Call
@@ -41,4 +42,7 @@ interface RetrofitService {
         @Field("username") username: String,
         @Field("password") password: String
     ): Call<User>
+
+    @GET("instagram/post/list/all/")
+    fun getInstagramPostAll(): Call<ArrayList<Post>>
 }

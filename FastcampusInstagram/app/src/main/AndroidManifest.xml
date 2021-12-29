@@ -15,6 +15,9 @@
         android:theme="@style/Theme.FastcampusInstagram"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".post.OutstagramPostListActivity"
+            android:exported="true" />
+        <activity
             android:name=".member.LoginActivity"
             android:exported="true" />
         <activity

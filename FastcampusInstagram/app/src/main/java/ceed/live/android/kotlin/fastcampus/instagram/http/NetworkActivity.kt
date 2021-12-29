@@ -10,7 +10,7 @@ import ceed.live.android.kotlin.fastcampus.instagram.BaseActivity
 import ceed.live.android.kotlin.fastcampus.instagram.Constants.Companion.API_STUDENTS_GET
 import ceed.live.android.kotlin.fastcampus.instagram.logger.Log4k
 import ceed.live.android.kotlin.fastcampus.instagram.R
-import ceed.live.android.kotlin.fastcampus.instagram.adapter.PersonRecyclerViewAdapter
+import ceed.live.android.kotlin.fastcampus.instagram.adapter.PersonAdapter
 import ceed.live.android.kotlin.fastcampus.instagram.data.Person
 import com.google.gson.Gson
 import org.json.JSONArray
@@ -30,7 +30,7 @@ class NetworkActivity : BaseActivity() {
     private var list: MutableList<Person> = mutableListOf()
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: PersonRecyclerViewAdapter
+    private lateinit var adapter: PersonAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -88,13 +88,13 @@ class NetworkActivity : BaseActivity() {
             list.add(it)
         }
 
-        adapter = PersonRecyclerViewAdapter(list)
-        adapter.setOnItemDetailClickListener(object : PersonRecyclerViewAdapter.OnItemDetailClickListener {
+        adapter = PersonAdapter(list)
+        adapter.setOnItemDetailClickListener(object : PersonAdapter.OnItemDetailClickListener {
             override fun onClick(data: Person, position: Int) {
                 readItem(data)
             }
         })
-        adapter.setOnItemDeleteClickListener(object : PersonRecyclerViewAdapter.OnItemDeleteClickListener {
+        adapter.setOnItemDeleteClickListener(object : PersonAdapter.OnItemDeleteClickListener {
             override fun onClick(data: Person, position: Int) {
                 deleteItem(data)
             }

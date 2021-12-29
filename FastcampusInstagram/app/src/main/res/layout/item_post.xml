@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:showIn="@layout/activity_outstagram_post_list">
+
+    <ImageView
+        android:id="@+id/iv_post_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:contentDescription="콘텐트 이미지"
+        android:layout_marginBottom="6dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/placeholder_hello_world"/>
+
+    <TextView
+        android:id="@+id/tv_post_owner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        tools:text="writer"
+        android:layout_marginBottom="6dp" />
+
+    <TextView
+        android:id="@+id/tv_post_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        tools:text="description"/>
+
+</LinearLayout>

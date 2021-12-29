@@ -12,8 +12,8 @@ import ceed.live.android.kotlin.fastcampus.instagram.R
 import ceed.live.android.kotlin.fastcampus.instagram.data.Person
 
 
-class PersonRecyclerViewAdapter(private val dataSet: MutableList<Person>) :
-    RecyclerView.Adapter<PersonRecyclerViewAdapter.ViewHolder>(), Adapter {
+class PersonAdapter(private val dataSet: MutableList<Person>) :
+    RecyclerView.Adapter<PersonAdapter.ViewHolder>(), Adapter {
 
     // Custom Listener
     interface OnItemDetailClickListener {

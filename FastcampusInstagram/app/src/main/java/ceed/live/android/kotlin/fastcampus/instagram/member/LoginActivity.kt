@@ -2,6 +2,7 @@ package ceed.live.android.kotlin.fastcampus.instagram.member
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import ceed.live.android.kotlin.fastcampus.instagram.MasterApplication
 import ceed.live.android.kotlin.fastcampus.instagram.R
 import ceed.live.android.kotlin.fastcampus.instagram.data.User
+import ceed.live.android.kotlin.fastcampus.instagram.post.OutstagramPostListActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -43,6 +45,8 @@ class LoginActivity : AppCompatActivity() {
                         token?.let {
                             saveUserToken(activity, token)
                             showToast("로그인 완료")
+                            (application as MasterApplication).createRetrofit()
+                            moveActivity()
                         }
                     }
 
@@ -62,5 +66,10 @@ class LoginActivity : AppCompatActivity() {
 
     private fun showToast(text: String) {
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+    }
+
+    fun moveActivity() {
+        val intent = Intent(this, OutstagramPostListActivity::class.java)
+        startActivity(intent)
     }
 }
